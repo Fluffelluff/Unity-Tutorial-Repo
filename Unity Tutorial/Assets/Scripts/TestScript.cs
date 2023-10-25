@@ -4,12 +4,29 @@ using UnityEngine;
 
 public class TestScript : MonoBehaviour
 {
+
+   
     //string combinedString;
 
     // editor variables
     [SerializeField]
 
     string editorString = "VALUE";
+
+    [SerializeField]
+
+    float targetScale = 1.0f;
+
+    Vector3 changingScale = new Vector3(1.0f, 1.0f, 1.0f);
+
+    [SerializeField]
+    SpriteRenderer playerSprite = null;
+
+    [SerializeField]
+    Color spriteColor = Color.white;
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +47,7 @@ public class TestScript : MonoBehaviour
         // Debug.Log(combinedString);
 
         Debug.Log(editorString);
+        playerSprite.color = spriteColor;
 
     }
 
@@ -38,8 +56,15 @@ public class TestScript : MonoBehaviour
     {
         /*
         Debug.Log("No no no no no no no no!");
-        */    
-
+        */
+        targetScale = targetScale + 0.01f;
+        Debug.Log(targetScale);
         //Debug.Log(combinedString);
+
+        changingScale.x = targetScale;
+        changingScale.y = targetScale;
+        changingScale.z = targetScale;
+
+        transform.localScale = changingScale;
         }
 }
