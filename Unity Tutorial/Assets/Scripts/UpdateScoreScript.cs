@@ -38,5 +38,6 @@ public class UpdateScoreScript : MonoBehaviour
     void Update()
     {
         
+
     }
 }
